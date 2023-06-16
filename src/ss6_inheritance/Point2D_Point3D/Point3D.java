@@ -1,4 +1,4 @@
-package ss6_KeThua.Point2D_Point3D;
+package ss6_inheritance.Point2D_Point3D;
 
 public class Point3D extends Point2D{
     float z;

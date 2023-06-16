@@ -1,16 +1,13 @@
 package ss8_clean_code;
 
-import ss10_danh_sach.list.MyList;
-
 public class TennisGame {
 
-    public static String getScore(String player1Name, String player2Name, int mScore1, int mScore2) {
-
+    public static String getScore(String player1Name, String player2Name, int m_score1, int m_score2) {
         String score = "";
         int tempScore=0;
-        if (mScore1==mScore2)
+        if (m_score1==m_score2)
         {
-            switch (mScore1)
+            switch (m_score1)
             {
                 case 0:
                     score = "Love-All";
@@ -30,20 +27,28 @@ public class TennisGame {
 
             }
         }
-        else if (mScore1>=4 || mScore2>=4)
+        else if (m_score1>=4 || m_score2>=4)
         {
-            int minusResult = mScore1-mScore2;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) score = "Win for player1";
-            else score ="Win for player2";
+            int minusResult = m_score1-m_score2;
+            if (minusResult==1) {
+                score ="Advantage player1";
+            }
+            else if (minusResult ==-1) {
+                score ="Advantage player2";
+            }
+            else if (minusResult>=2) {
+                score = "Win for player1";
+            }
+            else {
+                score ="Win for player2";
+            }
         }
         else
         {
             for (int i=1; i<3; i++)
             {
-                if (i==1) tempScore = mScore1;
-                else { score+="-"; tempScore = mScore2;}
+                if (i==1) tempScore = m_score1;
+                else { score+="-"; tempScore = m_score2;}
                 switch(tempScore)
                 {
                     case 0:
@@ -62,23 +67,5 @@ public class TennisGame {
             }
         }
         return score;
-    }
-
-    public static class MyListTest {
-        public static void main(String[] args) {
-            MyList<Integer> listInteger = new MyList<Integer>();
-            listInteger.add(1);
-            listInteger.add(2);
-            listInteger.add(3);
-            listInteger.add(3);
-            listInteger.add(4);
-
-            System.out.println("element 4: "+listInteger.get(4));
-            System.out.println("element 1: "+listInteger.get(1));
-            System.out.println("element 2: "+listInteger.get(2));
-
-            listInteger.get(6);
-            System.out.println("element 6: "+listInteger.get(6));
-        }
     }
 }

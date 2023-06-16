@@ -1,6 +1,4 @@
-package ss6_KeThua.Point_MovablePoint;
-
-import ss6_KeThua.Point2D_Point3D.Point2D;
+package ss6_inheritance.Point_MovablePoint;
 
 public class Point {
     float x, y;

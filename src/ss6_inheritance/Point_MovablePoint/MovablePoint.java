@@ -1,4 +1,4 @@
-package ss6_KeThua.Point_MovablePoint;
+package ss6_inheritance.Point_MovablePoint;
 
 public class MovablePoint extends Point {
     float xSpeed, ySpeed;
